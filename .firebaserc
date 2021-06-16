@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "friendscrud": {
+      "hosting": {
+        "FriendsCrud": [
+          "friendscrud"
+        ]
+      }
+    }
+  }
+}
