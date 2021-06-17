@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { DiaryComponent } from './diary/diary.component';
+import { DiaryDetailComponent } from './diary-detail/diary-detail.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DiaryComponent } from './diary/diary.component';
     NavbarComponent,
     HomeComponent,
     PagenotfoundComponent,
-    DiaryComponent
+    DiaryComponent,
+    DiaryDetailComponent
   ],
   imports: [
     BrowserModule,
