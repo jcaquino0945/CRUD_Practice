@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.diary = this.diaryService.getDiaries();
+    this.diary = this.diaryService.getRecentProduct();
     console.log(this.diary)
   }
 

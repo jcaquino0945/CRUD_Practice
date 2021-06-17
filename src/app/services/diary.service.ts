@@ -21,5 +21,9 @@ export class DiaryService {
   getProduct(id: string) {
     return DIARIES.find(x => x.id === id)
   }
+
+  getRecentProduct() {
+    return DIARIES.slice(0, 4)
+  }
   
 }
