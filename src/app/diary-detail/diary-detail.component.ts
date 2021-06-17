@@ -14,10 +14,15 @@ import { DiaryService } from '../services/diary.service';
 export class DiaryDetailComponent implements OnInit {
   diary!: any;
   private routeSub!: Subscription;
+  title: any;
+  description: any;
+  id: any;
+
 
   constructor(
     public diaryService: DiaryService,
     private route: ActivatedRoute,
+    private router: Router
 
   ) { }
 
@@ -28,18 +33,39 @@ export class DiaryDetailComponent implements OnInit {
       console.log(params) //log the entire params object
       console.log(params['id']) //log the value of id
       this.diary = this.diaryService.getProduct(params['id'])
+
+      this.title= this.diary.title;
+      this.description= this.diary.description;
+      this.id= this.diary.id;
+
+
     });
-/*
-    this.diaryService.getProduct(this.route.params)
+  }
+
+  addEntry() {
+
+    console.log(this.title,this.description,this.id)
+    this.diaryService.updateDiary(this.diary.id,this.title,this.description)
+    this.diaryService.deleteDiary(this.diary)
 
 
-    this.route.params
-    .pipe(
-      switchMap((params: Params) => {
-        return this.productService.getProduct(params['id']);
-      })
-    )
-    */
+    this.routeSub = this.route.params.subscribe(params => {
+      console.log(params) //log the entire params object
+      console.log(params['id']) //log the value of id
+      this.diary = this.diaryService.getProduct(params['id'])
+
+      this.title= this.diary.title;
+      this.description= this.diary.description;
+      this.id = (this.diaryService.getDiaryLength() + 1).toString();
+      
+
+    });
+  }
+
+  deleteEntry(item:any) {
+    console.log(item)
+    this.diaryService.deleteDiary(item)
+    this.router.navigate(['/diary'])
   }
 
 }

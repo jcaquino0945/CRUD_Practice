@@ -25,5 +25,34 @@ export class DiaryService {
   getRecentProduct() {
     return DIARIES.slice(0, 4)
   }
+
+  addToDiary(id: any, title: any,description: any) {
+    let diaryEntry = {
+      id:  id,
+      title: title,
+      description: description,
+      date: new Date()
+    }
+    return DIARIES.push(diaryEntry)
+  }
+
+  updateDiary(id: any, title: any,description: any) {
+    let diaryEntry = {
+      id:  id,
+      title: title,
+      description: description,
+      date: new Date()
+    }
+    console.log(DIARIES)
+    return DIARIES[id] = diaryEntry;
+  }
+
+  deleteDiary(item:any) {
+      return DIARIES.splice(DIARIES.indexOf(item), 1)
+  }
+
+  getDiaryLength() {
+    return DIARIES.length;
+  }
   
 }
