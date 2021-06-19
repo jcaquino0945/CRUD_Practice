@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   title: any;
   description: any;
   id!: any;
+  
 
   constructor(
     public diaryService: DiaryService,
