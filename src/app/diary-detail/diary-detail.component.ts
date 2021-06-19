@@ -42,11 +42,11 @@ export class DiaryDetailComponent implements OnInit {
     });
   }
 
-  addEntry() {
+  editEntry() {
 
     console.log(this.title,this.description,this.id)
     this.diaryService.updateDiary(this.diary.id,this.title,this.description)
-    this.diaryService.deleteDiary(this.diary)
+    //this.diaryService.deleteDiary(this.diary)
 
 
     this.routeSub = this.route.params.subscribe(params => {
