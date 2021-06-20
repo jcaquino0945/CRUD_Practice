@@ -23,7 +23,7 @@ export class DiaryService {
   }
 
   getRecentProduct() {
-    return DIARIES.slice(0, 4)
+    return DIARIES.slice(-4)
   }
 
   addToDiary(id: any, title: any,description: any) {
